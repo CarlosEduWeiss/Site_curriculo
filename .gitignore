@@ -1,3 +1,4 @@
 .claude/settings.local.json .vscode/settings.json
 .vercel
 .env*.local
+node_modules/
