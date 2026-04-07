@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlos Eduardo Weiss — Engenharia de Computação · UFSC</title>
+  <meta name="description" content="Portfólio de Carlos Eduardo Weiss, estudante de Engenharia de Computação na UFSC Araranguá, com foco em Cybersecurity e Desenvolvimento de Software." />
+
+  <!-- Google Fonts: Space Grotesk + DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-circle" id="cursorCircle" aria-hidden="true"></div>
+
+  <!-- Textura de ruído (SVG feTurbulence como background-image) -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════ NAVBAR ══════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-label="Navegação principal">
+    <a href="#hero" class="navbar-logo" aria-label="Voltar ao topo">CE</a>
+
+    <ul class="navbar-links" role="list">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#educacao">Educação</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <button class="navbar-menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#sobre"       class="mobile-link">Sobre</a></li>
+      <li><a href="#skills"      class="mobile-link">Skills</a></li>
+      <li><a href="#educacao"    class="mobile-link">Educação</a></li>
+      <li><a href="#experiencia" class="mobile-link">Experiência</a></li>
+      <li><a href="#projetos"    class="mobile-link">Projetos</a></li>
+      <li><a href="#contato"     class="mobile-link">Contato</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ══════════════════════════ 01 · HERO ══════════════════════════ -->
+    <section class="section-hero" id="hero" aria-label="Introdução">
+
+      <!-- Chuva de binários (canvas) — azul com efeitos de mouse/clique -->
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+
+        <!-- Texto: nome + subtítulo -->
+        <div class="hero-text">
+          <div class="hero-name-wrap">
+            <h1 class="hero-name" id="heroName">Carlos<br />Eduardo<br />Weiss</h1>
+          </div>
+          <p class="hero-sub" id="heroSub">
+            Estudante de Engenharia de Computação&nbsp;·&nbsp;UFSC&nbsp;·&nbsp;Cybersecurity&nbsp;&amp;&nbsp;Software
+          </p>
+        </div>
+
+        <!-- Foto principal no hero -->
+        <div class="hero-photo-wrap" id="heroPhotoWrap">
+          <img
+            src="foto-principal.png"
+            alt="Carlos Eduardo Weiss"
+            class="hero-photo"
+            id="heroPhoto"
+          />
+          <!-- Borda decorativa azul (accent da chuva binária) -->
+          <div class="hero-photo-frame" aria-hidden="true"></div>
+          <!-- Linhas de scan decorativas -->
+          <div class="hero-photo-scan" aria-hidden="true"></div>
+        </div>
+
+      </div>
+
+      <!-- Indicador de scroll -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-text">scroll</span>
+        <div class="scroll-bar"><div class="scroll-bar-inner"></div></div>
+      </div>
+
+      <!-- Número decorativo -->
+      <span class="hero-deco-num" aria-hidden="true">01</span>
+    </section>
+
+    <!-- ══════════════════════════ 02 · SOBRE MIM ══════════════════════════ -->
+    <section class="section sobre" id="sobre" aria-label="Sobre mim">
+      <div class="container">
+        <span class="sec-label" aria-hidden="true">// 02</span>
+
+        <div class="sobre-grid">
+
+          <!-- Foto principal -->
+          <div class="sobre-img-wrap">
+            <div class="sobre-img-inner">
+              <img
+                src="foto-principal.png"
+                alt="Carlos Eduardo Weiss, estudante de Engenharia de Computação na UFSC Araranguá"
+                class="sobre-photo"
+                id="sobrePhoto"
+                loading="lazy"
+              />
+              <div class="sobre-img-accent" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Texto -->
+          <div class="sobre-text-wrap">
+            <h2 class="sec-title sobre-title">Sobre<br />Mim</h2>
+
+            <div class="sobre-paragraphs">
+              <p>
+                Sou estudante de <strong>Engenharia de Computação na UFSC Araranguá</strong>,
+                com foco em segurança cibernética e desenvolvimento de software.
+              </p>
+              <p>
+                Minha mentalidade é orientada a resolver problemas complexos com precisão
+                técnica — seja em análise de vulnerabilidades, construção de sistemas
+                ou visualização de dados.
+              </p>
+              <p>
+                Apaixonado por tecnologia, busco constantemente expandir minha visão
+                técnica e contribuir com projetos que fazem a diferença.
+              </p>
+            </div>
+
+            <div class="sobre-tags">
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Software Dev</span>
+              <span class="tag">Data Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════ 03 · SKILLS (DASHBOARD) ══════════════════════════ -->
+    <section class="section skills" id="skills" aria-label="Habilidades">
+      <div class="container">
+        <span class="sec-label" aria-hidden="true">// 03</span>
+        <h2 class="sec-title">Habilidades</h2>
+
+        <!-- Dashboard interativo: clique em uma categoria para ver o resumo -->
+        <div class="skills-dashboard" id="skillsDashboard">
+
+          <!-- Coluna de abas (esquerda) -->
+          <nav class="skills-tabs" aria-label="Categorias de habilidades">
+            <button class="skill-tab active" data-skill="security" aria-selected="true">
+              <span class="skill-tab-num" aria-hidden="true">01</span>
+              <span class="skill-tab-label">Segurança</span>
+              <span class="skill-tab-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="skill-tab" data-skill="dev" aria-selected="false">
+              <span class="skill-tab-num" aria-hidden="true">02</span>
+              <span class="skill-tab-label">Desenvolvimento</span>
+              <span class="skill-tab-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="skill-tab" data-skill="data" aria-selected="false">
+              <span class="skill-tab-num" aria-hidden="true">03</span>
+              <span class="skill-tab-label">Dados</span>
+              <span class="skill-tab-arrow" aria-hidden="true">→</span>
+            </button>
+            <button class="skill-tab" data-skill="systems" aria-selected="false">
+              <span class="skill-tab-num" aria-hidden="true">04</span>
+              <span class="skill-tab-label">Sistemas</span>
+              <span class="skill-tab-arrow" aria-hidden="true">→</span>
+            </button>
+          </nav>
+
+          <!-- Painel de detalhes (direita) — preenchido pelo JS -->
+          <div class="skills-panel" id="skillsPanel" role="region" aria-live="polite"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ 04 · EDUCAÇÃO ══════════════════════════ -->
+    <section class="section educacao" id="educacao" aria-label="Educação">
+      <div class="container">
+        <span class="sec-label" aria-hidden="true">// 04</span>
+        <h2 class="sec-title">Educação</h2>
+
+        <div class="timeline">
+          <!-- Linha vertical animada -->
+          <div class="timeline-track" aria-hidden="true">
+            <div class="timeline-progress" id="timelineProgress"></div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <time class="timeline-period" datetime="2025">2025 — presente</time>
+              <h3 class="timeline-title">Engenharia de Computação</h3>
+              <p class="timeline-inst">
+                UFSC — Universidade Federal de Santa Catarina
+                <span>Campus Araranguá</span>
+              </p>
+              <p class="timeline-desc">
+                Curso em andamento com foco em sistemas computacionais,
+                segurança da informação e desenvolvimento de software.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <time class="timeline-period">Em andamento</time>
+              <h3 class="timeline-title">Lab e Hacking</h3>
+              <p class="timeline-inst">
+                TryHackMe
+                <span>tryhackme.com</span>
+              </p>
+              <p class="timeline-desc">
+                Prática de hacking ético e segurança ofensiva em laboratórios guiados,
+                cobrindo temas como pentest, exploração de vulnerabilidades e CTFs.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <time class="timeline-period">Concluído</time>
+              <h3 class="timeline-title">Programação Front-end &amp; Back-end</h3>
+              <p class="timeline-inst">
+                Danki Code
+                <span>dankicode.com</span>
+              </p>
+              <p class="timeline-desc">
+                Formação completa em desenvolvimento web, abrangendo HTML, CSS, JavaScript,
+                frameworks front-end e desenvolvimento back-end.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-body">
+              <time class="timeline-period">Concluído</time>
+              <h3 class="timeline-title">Banco de Dados, SQL &amp; Power BI</h3>
+              <p class="timeline-inst">
+                Xperiun
+                <span>xperiun.com</span>
+              </p>
+              <p class="timeline-desc">
+                Capacitação em modelagem e administração de banco de dados, linguagem SQL
+                e visualização de dados com Power BI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ 05 · EXPERIÊNCIA ══════════════════════════ -->
+    <section class="section experiencia" id="experiencia" aria-label="Experiência">
+      <div class="container">
+        <span class="sec-label" aria-hidden="true">// 05</span>
+        <h2 class="sec-title">Experiência</h2>
+
+        <div class="exp-list">
+
+          <article class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-period">2024 · presente</span>
+              <span class="exp-badge">Laboratório de Pesquisa</span>
+            </div>
+            <div class="exp-body">
+              <h3 class="exp-title">Laboratório de Tecnologias Computacionais — LabTeC</h3>
+              <p class="exp-desc">
+                Atuação no LabTeC (UFSC Araranguá) com foco em treinamento e fine-tuning de
+                modelos de linguagem (LLMs/IA), além de desenvolvimento de software em
+                Python e C++. Experiência prática em pipelines de dados, otimização de
+                modelos e construção de ferramentas computacionais de alto desempenho.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ 06 · PROJETOS ══════════════════════════ -->
+    <section class="section projetos" id="projetos" aria-label="Projetos">
+      <div class="container">
+        <span class="sec-label" aria-hidden="true">// 06</span>
+        <h2 class="sec-title">Projetos</h2>
+
+        <div class="projects-grid">
+
+          <article class="proj-card">
+            <div class="proj-top">
+              <span class="proj-num" aria-hidden="true">001</span>
+              <div class="proj-tags">
+                <span>IA</span>
+                <span>LabTeC</span>
+                <span>UFSC</span>
+              </div>
+            </div>
+            <h3 class="proj-title">VISION — LabTeC</h3>
+            <p class="proj-desc">
+              Projeto desenvolvido no Laboratório de Tecnologias Computacionais (LabTeC) da UFSC Araranguá,
+              com foco em visão computacional e inteligência artificial aplicada.
+            </p>
+            <a href="https://vision.ufsc.br" target="_blank" rel="noopener noreferrer"
+               class="proj-link mag-btn" aria-label="Ver projeto VISION">
+              Ver mais
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-top">
+              <span class="proj-num" aria-hidden="true">002</span>
+              <div class="proj-tags">
+                <span>SaaS</span>
+                <span>Pessoal</span>
+                <span class="proj-tag-wip">Em andamento · 65%</span>
+              </div>
+            </div>
+            <h3 class="proj-title">Micro SaaS — CONNECTED</h3>
+            <p class="proj-desc">
+              Projeto pessoal de micro SaaS desenvolvido do zero, com foco em resolver
+              um problema real através de uma solução leve, escalável e orientada a produto.
+            </p>
+            <a href="#" class="proj-link mag-btn" aria-label="Ver projeto CONNECTED">
+              Ver mais
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-top">
+              <span class="proj-num" aria-hidden="true">003</span>
+              <div class="proj-tags">
+                <span>Pentest</span>
+                <span>Bug Bounty</span>
+              </div>
+            </div>
+            <h3 class="proj-title">Teste de Invasão e Reporte</h3>
+            <p class="proj-desc">
+              Análise de segurança ofensiva e reporte de vulnerabilidades (bug bounty)
+              na plataforma <strong>ulife.com.br</strong>, identificando e documentando
+              falhas de segurança de forma responsável.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ 07 · ME CONTRATE (CTA) ══════════════════════════ -->
+    <section class="section cta" id="cta" aria-label="Me contrate">
+      <div class="container">
+        <div class="cta-badge">
+          <span class="cta-dot" aria-hidden="true"></span>
+          Disponível para projetos
+        </div>
+        <h2 class="cta-title" id="ctaTitle">
+          Vamos construir<br />algo juntos?
+        </h2>
+        <a href="https://wa.me/5548999251360" target="_blank" rel="noopener noreferrer" class="cta-btn mag-btn">Entrar em contato</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ 08 · CONTATO ══════════════════════════ -->
+    <section class="section contato" id="contato" aria-label="Contato">
+      <div class="container">
+        <span class="sec-label" aria-hidden="true">// 08</span>
+        <h2 class="sec-title">Contato</h2>
+
+        <div class="contact-links">
+
+          <!--
+            PLACEHOLDER: Substitua os hrefs abaixo com seus links reais.
+            LinkedIn: https://linkedin.com/in/[seu-usuario]
+            GitHub:   https://github.com/[seu-usuario]
+            E-mail:   mailto:[seu-email]@[dominio].com
+          -->
+
+          <a href="https://www.linkedin.com/in/carlos-eduardo-weiss-8933932b2/"
+             target="_blank" rel="noopener noreferrer"
+             class="contact-link mag-btn" aria-label="Abrir LinkedIn">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="2" y="9" width="4" height="12"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="https://github.com/CarlosEduWeiss"
+             target="_blank" rel="noopener noreferrer"
+             class="contact-link mag-btn" aria-label="Abrir GitHub">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="mailto:[seu-email]@email.com"
+             class="contact-link mag-btn" aria-label="Enviar e-mail">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="22,6 12,13 2,6"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>E-mail</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2024 Carlos Eduardo — Todos os direitos reservados</p>
+      <p class="footer-built">
+        <span class="accent">HTML</span> + <span class="accent">CSS</span> + <span class="accent">JS</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════ CDNs ══════════════════════════ -->
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- GSAP core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- ScrollTrigger plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- SplitText plugin (gratuito a partir do GSAP 3.12) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+
+  <!-- Canvas de chuva binária global — ativa a partir da seção Habilidades -->
+  <canvas id="globalBinaryCanvas" aria-hidden="true"></canvas>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
