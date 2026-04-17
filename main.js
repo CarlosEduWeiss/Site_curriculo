@@ -1,26 +1,4 @@
-/**
- * main.js — Carlos Eduardo Personal Site
- * Stack: Lenis + GSAP + ScrollTrigger + SplitText (com fallback manual)
- *
- * Ordem de inicialização:
- *  1. GSAP plugins
- *  2. Lenis smooth scroll (conectado ao ticker do GSAP)
- *  3. Canvas hero (grade de pontos animada)
- *  4. Animação de entrada do hero (nome + subtítulo)
- *  5. Navbar (aparece ao sair do hero, fundo blur ao rolar)
- *  6. Cursor customizado com efeito de lag
- *  7. Botões magnéticos
- *  8. Animações disparadas por scroll (SplitText + ScrollTrigger)
- */
 
-/* ================================================================
-   UTILS — manipulação de texto sem SplitText
-   ================================================================ */
-
-/**
- * Divide um elemento de texto em spans de chars, preservando <br>.
- * Usado como fallback quando o CDN do SplitText não estiver disponível.
- */
 function splitCharsManual(el) {
   const html = el.innerHTML;
   const parts = html.split(/<br\s*\/?>/i);
